@@ -30,6 +30,14 @@
     "product-manager"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lbyxunxunnini/dsh-agent-pm.git"
+  },
+  "homepage": "https://github.com/lbyxunxunnini/dsh-agent-pm#readme",
+  "bugs": {
+    "url": "https://github.com/lbyxunxunnini/dsh-agent-pm/issues"
+  },
   "engines": {
     "node": ">=18",
     "dsh": ">=0.2.1-0 <0.3.0"

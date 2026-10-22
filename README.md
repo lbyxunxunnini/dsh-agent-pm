@@ -29,11 +29,19 @@ dsh plugin --profile web add /absolute/path/to/dsh-agent-pm
 dsh plugin --profile web add dsh-agent-pm
 ```
 
-### GitHub（发布后）
+### GitHub
 
 ```sh
 dsh plugin --profile web add github:lbyxunxunnini/dsh-agent-pm
 ```
+
+建议锁定标签，避免后续提交改变实际运行内容：
+
+```sh
+dsh plugin --profile web add 'github:lbyxunxunnini/dsh-agent-pm#v0.1.0'
+```
+
+仓库地址：https://github.com/lbyxunxunnini/dsh-agent-pm
 
 安装后启动对应的 profile：
 
