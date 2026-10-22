@@ -1,0 +1,6 @@
+# dsh-agent-pm bundle patch: mount the Agent PM skill provider into the host
+# skill registry. The row is host-plane, so every agent preset's scope chain
+# merges the agent-pm skill it registers.
+- insert:
+    - id: dsh-agent-pm
+      name: 'dsh-agent-pm'

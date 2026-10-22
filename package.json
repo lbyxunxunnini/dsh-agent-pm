@@ -1,0 +1,42 @@
+{
+  "name": "dsh-agent-pm",
+  "version": "0.1.0",
+  "description": "Agent PM: product-manager-style review for Claude Code and DeepSeek Harness agent projects",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "skills",
+    "scripts",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "verify": "node scripts/verify.mjs"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "skill",
+    "agent-pm",
+    "review",
+    "product-manager"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18",
+    "dsh": ">=0.2.1-0 <0.3.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
