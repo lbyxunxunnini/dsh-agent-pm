@@ -105,6 +105,31 @@ dsh-agent-pm/
 
 > 当前状态：已在隔离的 `DSH_HOME` 中用 DSH `0.2.1-rc.2` 完成安装、技能发现、正文加载和卸载验证；未在 Web UI 中做人工触发验证。首次实测步骤见下节。
 
+## 权限与外部服务
+
+- 不发起网络请求。
+- 不读取环境变量、凭据或工作区之外的业务文件。
+- 运行时只读取包内 `skills/agent-pm/` 下的 `SKILL.md` 和 `references/`。
+- 安装阶段没有 `prepare` 构建脚本；插件代码在 DSH 启动加载时执行。
+- 代码只使用 Node 内置模块，要求 Node.js >= 18。macOS 已实测；Windows / Linux 未实测。
+
+## 可见的验证输出
+
+在隔离 `DSH_HOME` 中通过 `ctx.skills` 探针得到的真实输出：
+
+```text
+[probe] skills=agent-pm,agently-mail,task-driver
+[probe] summary={"name":"agent-pm","descriptionLength":272,"provider":"dsh-agent-pm"}
+[probe] definition={"name":"agent-pm","contentLength":8134,"resourceBase":"directory"}
+```
+
+安装命令实测：
+
+```text
++ dsh-agent-pm github:lbyxunxunnini/dsh-agent-pm#v0.1.0
+Done in 10.9s
+```
+
 ## 验证
 
 ```sh
